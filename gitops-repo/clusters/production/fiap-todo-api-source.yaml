@@ -4,10 +4,10 @@ metadata:
   name: fiap-todo-api
   namespace: flux-system
 spec:
-  interval: 1m                    # Verifica a cada 1 minuto
-  url: https://github.com/josenetoo/fiap-dclt-aula04
+  interval: 1m
+  url: https://github.com/cardosolutions/fiap-dclt-aula04
   ref:
     branch: main
   ignore: |
-    /*                            # Ignora tudo
-    !/gitops-repo/applications/   # Exceto esta pasta
+    /*
+    !/gitops-repo/applications/
