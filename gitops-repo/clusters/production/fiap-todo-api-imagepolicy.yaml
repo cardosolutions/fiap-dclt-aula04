@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: fiap-todo-api
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: fiap-todo-api
+  policy:
+    alphabetical:
+      order: asc

@@ -1,0 +1,26 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageUpdateAutomation
+metadata:
+  name: fiap-todo-api
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: flux@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: "\U0001F916 FluxCD: atualizar imagem {{range .Updated.Images}}{{println
+        .}}{{end}}"
+    push:
+      branch: main
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: fiap-todo-api
+  update:
+    path: ./gitops-repo/applications/fiap-todo-api/overlays/production
+    strategy: Setters

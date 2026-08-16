@@ -15,4 +15,4 @@ commonLabels:
 images:
 - name: fiap-todo-api
   newName: 497172038820.dkr.ecr.sa-east-1.amazonaws.com/fiap-todo-api
-  newTag: 803c0ec4dd6fdcd84279b7eb936a788bc11d3e17
+  newTag: 803c0ec4dd6fdcd84279b7eb936a788bc11d3e17 # {"$imagepolicy": "flux-system:fiap-todo-api"}

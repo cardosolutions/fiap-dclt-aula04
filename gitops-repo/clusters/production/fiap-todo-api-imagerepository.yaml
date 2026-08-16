@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: fiap-todo-api
+  namespace: flux-system
+spec:
+  image: 497172038820.dkr.ecr.sa-east-1.amazonaws.com/fiap-todo-api
+  interval: 1m
+  secretRef:
+    name: ecr-credentials
