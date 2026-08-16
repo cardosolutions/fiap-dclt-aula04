@@ -11,10 +11,8 @@ permissions:
   contents: write
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: sa-east-1
   ECR_REPOSITORY: fiap-todo-api
-  ARGOCD_SERVER: 'localhost:8080'
-  ARGOCD_APP_NAME: 'fiap-todo'
 
 jobs:
   # ============================================
@@ -78,6 +76,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-push
     
+    env:
+      ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
     steps:
       - name: 📥 Checkout código
         uses: actions/checkout@v4
@@ -139,6 +139,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-gitops
     
+    env:
+      ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
     steps:
       - name: 📥 Checkout código
         uses: actions/checkout@v4
@@ -175,6 +177,8 @@ jobs:
     needs: [build-and-push, update-gitops, validate-manifests]
     if: always()
     
+    env:
+      ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
     steps:
       - name: 📊 Complete Pipeline Summary
         env:
