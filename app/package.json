@@ -1,6 +1,6 @@
 {
   "name": "fiap-todo-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Todo List API for FIAP CI/CD course - Docker & Kubernetes",
   "main": "src/server.js",
   "scripts": {
